@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["node_module/**/*.ts", "src/typings/**/*.d.ts"]
+  },
+  "rules": {
+    "no-console": [true, "log"],
+    "array-type": [true, "array"],
+    "function-name": [
+      true,
+      {
+        "method-regex": "^[a-z][\\w\\d]+$",
+        "private-method-regex": "^_[a-z][\\w\\d]+$",
+        "protected-method-regex": "^[_]?[a-z][\\w\\d]+$",
+        "static-method-regex": "^[a-z][\\w\\d]+$",
+        "function-regex": "^[_]?[a-z][\\w\\d]+$"
+      }
+    ],
+    "max-line-length": [true, 140],
+    "no-empty-interface": false,
+    "no-reference": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "object-shorthand-properties-first": false,
+    "quotemark": [true, "single"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
+  }
+}
