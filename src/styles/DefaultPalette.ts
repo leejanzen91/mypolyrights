@@ -1,20 +1,4 @@
-export interface IPalette {
-  black: string;
-  white: string;
-  blue: string;
-  red: string;
-  yellow: string;
-  lightblue: string;
-  lightred: string;
-  lightyellow: string;
-}
-
-export interface IDefaultPalette extends IPalette {
-  themePrimary: string;
-  themeDark: string;
-  themeLight: string;
-  themeSecondary: string;
-}
+import { IDefaultPalette, IPalette } from './theme.types';
 
 const palette: IPalette = {
   black: "#222222",
