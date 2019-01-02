@@ -2,17 +2,13 @@ import DefaultPalette from './DefaultPalette';
 import DefaultFonts from './fonts';
 import { IDefaultPalette, IPartialTheme, ISemanticColors, ITheme } from './theme.types';
 
-function _makeSemanticColorsFromPalette(p: IDefaultPalette, isInverted: boolean) {
-  const toReturn: ISemanticColors = {
-    buttonBackground: p.themePrimary,
-    buttonText: isInverted ? p.white : p.black,
-    linkColor: isInverted ? p.lightblue : p.blue,
-    siteBackground: isInverted ? p.themeDark : p.themeLight,
-    textColor: isInverted ? p.themeLight : p.themeDark,
-  };
-
-  return toReturn;
-}
+const _makeSemanticColorsFromPalette = (p: IDefaultPalette, isInverted: boolean): ISemanticColors => ({
+  buttonBackground: p.themePrimary,
+  buttonText: isInverted ? p.white : p.black,
+  linkColor: isInverted ? p.lightblue : p.blue,
+  siteBackground: isInverted ? p.themeDark : p.themeLight,
+  textColor: isInverted ? p.themeLight : p.themeDark,
+})
 
 let _theme: ITheme = {
   fonts: DefaultFonts,
@@ -24,10 +20,7 @@ let _theme: ITheme = {
 export const palette = _theme.palette;
 export const semanticColors = _theme.semanticColors;
 
-export const fonts = {
-  fontFamily: 'Roboto, sans-serif',
-  monospace: 'FiraCode, monospace',
-};
+export const fonts = DefaultFonts;
 
 export function createTheme(theme: IPartialTheme) {
   const newPalette = { ...DefaultPalette, ...theme.palette };

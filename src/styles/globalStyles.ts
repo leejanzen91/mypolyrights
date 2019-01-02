@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { fonts, semanticColors } from './theme'
+
 import MissionGothicRegular from "../assets/fonts/Mission Gothic Regular.otf";
-import MissionGothicBold from "../assets/fonts/Mission Gothic Bold.otf";
 import MissionGothicBlack from "../assets/fonts/Mission Gothic Black.otf";
 
 export const GlobalStyle = createGlobalStyle`
@@ -12,14 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: "Mission Gothic";
-    src: url(${MissionGothicBold});
-    font-weight: 500;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "Mission Gothic";
     src: url(${MissionGothicBlack});
-    font-weight: 600;
+    font-weight: bold;
     font-style: normal;
   }
 
@@ -29,21 +24,49 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Mission Gothic', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: ${fonts.fontFamily};
+    color: ${semanticColors.textColor};
+    background: ${semanticColors.siteBackground};
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  img {
+    max-width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: .1em;
+    margin-bottom: .75em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  a {
+    color: ${semanticColors.linkColor};
   }
 `;
