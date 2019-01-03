@@ -64,7 +64,7 @@ export class RightsList extends Component<{}, IRightsListState> {
           <Right>The right to specify our partners as medical caregivers</Right>
           <Right>The right for multiple relationships to be treated with the same weight and seriousness we grant them, and not as a "kinky sex thing"</Right>
           <Right>The right to be public with how we live our lives without fear</Right>
-          <Right>The social right to not be the target of assault, physical and secual do to our relationship orientation</Right>
+          <Right>The social right to not be the target of assault, physical or sexual due to our relationship orientation</Right>
         </Root>
       );
     }
