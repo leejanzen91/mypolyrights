@@ -1,29 +1,38 @@
-import React, { Component } from "react";
-import { RightsList } from '../RightsList/index';
+import React, { Component, lazy, Suspense } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { AppDefinition } from './AppDefinition';
+import { Nav } from '../Nav';
 
 import { GlobalStyle } from "../../styles/globalStyles";
-import { Root, Header, Logo, Body, Banner, Footer, Outro } from './App.styles';
+import { Root, Header, Logo, Body, Footer, Outro } from './App.styles';
 
 class App extends Component {
   public render(): JSX.Element {
     return (
-      <Root>
-        <GlobalStyle />
-        <Header>
-          <Logo>My Poly Rights</Logo>
-        </Header>
-        <Body>
-          <Banner>
-            <h3>Polyamory</h3>
-            <pre>poly·​am·​ory | \ˌpä-lē-ˈa-mə-rē</pre>
-            <p>the state or practice of having more than one open romantic relationship at a time</p>
-          </Banner>
-
-          <h2>What rights do we want?</h2>
-          <RightsList />
-        </Body>
-        <Footer><Outro>We just want the same rights as everyone else.</Outro></Footer>
-      </Root>
+      <Router>
+        <Root>
+          <GlobalStyle />
+          <Header>
+            <Logo>My Poly Rights</Logo>
+            <Nav pages={AppDefinition.pages} />
+          </Header>
+          <Body>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                {AppDefinition.pages.map((page, pageIndex) => {
+                  const PageComponent = page.component();
+                  return (
+                    <Route key={pageIndex} path={page.url} exact={true}>
+                      <PageComponent />
+                    </Route>
+                  )
+                })}
+              </Switch>
+            </Suspense>
+          </Body>
+          <Footer><Outro>We just want the same rights as everyone else.</Outro></Footer>
+        </Root>
+      </Router>
     );
   }
 }

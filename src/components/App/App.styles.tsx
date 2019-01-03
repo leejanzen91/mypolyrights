@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getTheme } from '../../styles/theme';
+import { getTheme } from '../../styles';
 
 const { palette } = getTheme();
 
@@ -24,7 +24,7 @@ export const Header = styled.header`
 export const Logo = styled.h1`
   font-weight: bolder;
   font-size: 3.5em;
-  margin: .5em 0;
+  margin: .5em 0 0;
 
   @media screen and (max-width: 480px) {
     font-size: 2.8em;
@@ -41,14 +41,6 @@ export const Body = styled.main`
   @media screen and (max-width: 480px) {
     padding: 20px;
   }
-`;
-
-export const Banner = styled.div`
-  background: ${palette.lightyellow};
-  border: 2px solid ${palette.yellow};
-  border-radius: 5px;
-  padding: 1.2em;
-  margin-bottom: 30px;
 `;
 
 export const Footer = styled.footer`
