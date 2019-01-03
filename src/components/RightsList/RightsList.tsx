@@ -52,6 +52,7 @@ export class RightsList extends Component<{}, IRightsListState> {
     } else {
       return !error ? <div>Loading...</div> : (
         <Root>
+          <p>There was an error loading the list, this is likely out of date.</p>
           <Right>The right to not be discriminated against for:
               <ul>
               <li>Housing</li>
@@ -90,10 +91,11 @@ export class RightsList extends Component<{}, IRightsListState> {
       gapi.client.sheets.spreadsheets.values
         .get({
           spreadsheetId: config.spreadsheetId,
-          range: "Sheet1!A2:B1000"
+          range: "RightsList!A2:B"
         })
         .then(
           (response: any) => {
+            console.log(response)
             const data = response.result.values;
             const values = data.map((value: any) => {
               const points = value[1].split(';');
