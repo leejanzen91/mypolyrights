@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
-export const Root = styled.ul`
+export const Root = styled.div`
   margin: 0;
   max-width: 600px;
   text-align: left;
-`;
 
-export const Right = styled.li`
   ul {
+    margin: 0;
+    max-width: 600px;
+    text-align: left;
 
+    li {
+      p {
+        margin: 0;
+      }
+    }
   }
-`
+`;
