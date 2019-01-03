@@ -15,9 +15,11 @@ export interface IRightsListState {
   error?: boolean | null
 }
 
+const localRights = window.localStorage && window.localStorage.getItem('rights');
+
 export class RightsList extends Component<{}, IRightsListState> {
   public readonly state = {
-    rights: [],
+    rights: localRights ? JSON.parse(localRights) : [],
     error: null
   }
 
@@ -31,7 +33,7 @@ export class RightsList extends Component<{}, IRightsListState> {
       return (
         <Root>
           {
-            rights.map((right: IRight, rightIndex) => {
+            rights.map((right: IRight, rightIndex: number) => {
               const points = right.points;
               return (
                 <Right key={rightIndex}>
@@ -87,7 +89,7 @@ export class RightsList extends Component<{}, IRightsListState> {
   }
 
   private _loadRights = () => {
-    gapi && gapi.client.load("sheets", "v4", () => {
+    return gapi.client.load("sheets", "v4", () => {
       gapi.client.sheets.spreadsheets.values
         .get({
           spreadsheetId: config.spreadsheetId,
@@ -95,10 +97,9 @@ export class RightsList extends Component<{}, IRightsListState> {
         })
         .then(
           (response: any) => {
-            console.log(response)
             const data = response.result.values;
             const values = data.map((value: any) => {
-              const points = value[1].split(';');
+              const points = value[1] && value[1].split(';');
               return {
                 right: value[0],
                 points,
@@ -109,7 +110,11 @@ export class RightsList extends Component<{}, IRightsListState> {
           (response: any) => {
             this._onLoad(undefined, response.result.error);
           }
-        );
+        )
+        .catch((error: any) => {
+          console.error(error);
+          this.setState({error})
+        })
     });
   }
 
@@ -117,6 +122,7 @@ export class RightsList extends Component<{}, IRightsListState> {
     if (data) {
       const { values } = data;
       this.setState({ rights: values });
+      window.localStorage && window.localStorage.setItem('rights', JSON.stringify(values));
     } else {
       this.setState({ error })
     }
