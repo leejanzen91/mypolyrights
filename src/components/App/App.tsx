@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component, Suspense } from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { AppDefinition } from './AppDefinition';
 import { Nav } from '../Nav';

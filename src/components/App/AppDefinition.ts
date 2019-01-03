@@ -5,12 +5,12 @@ export const AppDefinition = {
     {
       name: 'Home',
       url: '/',
-      component: () => lazy(() => import('../../Pages/Home'))
+      component: () => lazy(() => import('../../pages/Home'))
     },
     {
       name: 'Sources',
       url: '/sources',
-      component: () => lazy(() => import('../../Pages/Sources'))
+      component: () => lazy(() => import('../../pages/Sources'))
     }
   ]
 };
