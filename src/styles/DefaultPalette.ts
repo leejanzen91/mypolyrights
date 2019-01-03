@@ -8,7 +8,7 @@ const palette: IPalette = {
   yellow: "#f3d117",
   lightblue: "#5757ff",
   lightred: "#fa8282",
-  lightyellow: "#ffe866",
+  lightyellow: "#fff8d0",
 };
 
 export const DefaultPalette: IDefaultPalette = {
