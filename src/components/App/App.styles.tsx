@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {getTheme} from '../../styles/theme';
+import { getTheme } from '../../styles/theme';
 
 export const Root = styled.div`
   text-align: center;
@@ -31,13 +31,3 @@ export const Body = styled.main`
   justify-content: center;
   align-items: center;
 `;
-
-export const RightsList = styled.ul`
-  margin: 0;
-  max-width: 600px;
-  text-align: left;
-`;
-
-export const Right = styled.li`
-
-`

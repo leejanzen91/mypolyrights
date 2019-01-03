@@ -1,38 +1,26 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-// import "./App.css";
+import { RightsList } from '../RightsList/index';
+
 import { GlobalStyle } from "../../styles/globalStyles";
-
-const Root = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Header = styled.header`
-  background-color: #222;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  border-bottom: 5px solid
-`;
-
-const Logo = styled.h1`
-  font-weight: 600;
-  font-size: 3.5em;
-`;
+import { Root, Header, Logo, Body } from './App.styles';
 
 class App extends Component {
-  render() {
+  public render(): JSX.Element {
     return (
       <Root>
         <GlobalStyle />
         <Header>
           <Logo>My Poly Rights</Logo>
         </Header>
-        <main />
+        <Body>
+          <h3>Polyamory</h3>
+          <span>poly·​am·​ory | \ˌpä-lē-ˈa-mə-rē</span>
+          <p>the state or practice of having more than one open romantic relationship at a time</p>
+
+          <h2>What rights do we want?</h2>
+          <RightsList />
+        </Body>
+        <footer><p>Really, we just want the same rights as everyone else.</p></footer>
       </Root>
     );
   }
