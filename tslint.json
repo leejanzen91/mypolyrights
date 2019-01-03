@@ -24,6 +24,7 @@
     "max-line-length": [true, 140],
     "no-empty-interface": false,
     "no-reference": false,
+    "no-submodule-imports": [true, "components", "Pages", "styles", "typings"],
     "no-unused-expression": [true, "allow-fast-null-checks"],
     "object-shorthand-properties-first": false,
     "quotemark": [true, "single"],
