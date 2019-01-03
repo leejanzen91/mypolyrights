@@ -2,20 +2,37 @@ import { createGlobalStyle } from "styled-components";
 import { fonts, semanticColors } from './theme'
 
 import MissionGothicRegular from "../assets/fonts/Mission Gothic Regular.otf";
+import MissionGothicRegularItalic from "../assets/fonts/Mission Gothic Regular Italic.otf";
 import MissionGothicBlack from "../assets/fonts/Mission Gothic Black.otf";
+import MissionGothicBlackItalic from "../assets/fonts/Mission Gothic Black Italic.otf";
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Mission Gothic";
     src: url(${MissionGothicRegular});
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: "Mission Gothic";
+    src: url(${MissionGothicRegularItalic});
+    font-weight: normal;
+    font-style: italic;
+  }
+
   @font-face {
     font-family: "Mission Gothic";
     src: url(${MissionGothicBlack});
     font-weight: bold;
     font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Mission Gothic";
+    src: url(${MissionGothicBlackItalic});
+    font-weight: bold;
+    font-style: italic;
   }
 
   *, *:before, *:after {
