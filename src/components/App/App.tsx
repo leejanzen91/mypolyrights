@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { RightsList } from '../RightsList/index';
 
 import { GlobalStyle } from "../../styles/globalStyles";
-import { Root, Header, Logo, Body } from './App.styles';
+import { Root, Header, Logo, Body, Footer } from './App.styles';
 
 class App extends Component {
   public render(): JSX.Element {
@@ -20,7 +20,7 @@ class App extends Component {
           <h2>What rights do we want?</h2>
           <RightsList />
         </Body>
-        <footer><p>Really, we just want the same rights as everyone else.</p></footer>
+        <Footer><p>We just want the same rights as everyone else.</p></Footer>
       </Root>
     );
   }
