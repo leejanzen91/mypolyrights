@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { getTheme } from '../../styles';
+import { Link } from "react-router-dom";
 
 const { palette } = getTheme();
 
@@ -21,7 +22,10 @@ export const Header = styled.header`
   box-shadow: inset 0 5px ${palette.red};
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled(Link)`
+  color: ${palette.themeLight};
+  text-decoration: none;
+
   font-weight: bolder;
   font-size: 3.5em;
   margin: .5em 0 0;

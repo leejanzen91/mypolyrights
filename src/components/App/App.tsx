@@ -13,7 +13,7 @@ class App extends Component {
         <Root>
           <GlobalStyle />
           <Header>
-            <Logo>My Poly Rights</Logo>
+            <Logo to="/">My Poly Rights</Logo>
             <Nav pages={AppDefinition.pages} />
           </Header>
           <Body>
