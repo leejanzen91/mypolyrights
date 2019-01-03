@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { RightsList } from '../RightsList/index';
 
 import { GlobalStyle } from "../../styles/globalStyles";
-import { Root, Header, Logo, Body, Footer } from './App.styles';
+import { Root, Header, Logo, Body, Footer, Outro } from './App.styles';
 
 class App extends Component {
   public render(): JSX.Element {
@@ -14,13 +14,13 @@ class App extends Component {
         </Header>
         <Body>
           <h3>Polyamory</h3>
-          <span>poly·​am·​ory | \ˌpä-lē-ˈa-mə-rē</span>
+          <pre>poly·​am·​ory | \ˌpä-lē-ˈa-mə-rē</pre>
           <p>the state or practice of having more than one open romantic relationship at a time</p>
 
           <h2>What rights do we want?</h2>
           <RightsList />
         </Body>
-        <Footer><p>We just want the same rights as everyone else.</p></Footer>
+        <Footer><Outro>We just want the same rights as everyone else.</Outro></Footer>
       </Root>
     );
   }

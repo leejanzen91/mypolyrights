@@ -25,6 +25,10 @@ export const Logo = styled.h1`
   font-weight: bolder;
   font-size: 3.5em;
   margin: .5em 0;
+
+  @media screen and (max-width: 480px) {
+    font-size: 2.8em;
+  }
 `;
 
 export const Body = styled.main`
@@ -33,10 +37,24 @@ export const Body = styled.main`
   flex-direction: column;
   align-items: center;
   flex: 1 0 auto;
+
+  @media screen and (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 export const Footer = styled.footer`
   background: ${palette.themeDark};
   color: ${palette.themeLight};
   padding: 30px;
+
+
+
+  @media screen and (max-width: 480px) {
+    padding: 15px;
+  }
+`;
+
+export const Outro = styled.h3`
+  margin: 0;
 `;
