@@ -31,13 +31,13 @@ export interface ISemanticColors {
 export interface ITheme {
   fonts: IFonts;
   isInverted: boolean;
-  palette: IPalette;
+  palette: IDefaultPalette;
   semanticColors: ISemanticColors;
 }
 
 export interface IPartialTheme {
   fonts?: Partial<IFonts>;
   isInverted?: boolean;
-  palette?: Partial<IPalette>;
+  palette?: Partial<IDefaultPalette>;
   semanticColors?: Partial<ISemanticColors>;
 }
